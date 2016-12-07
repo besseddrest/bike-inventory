@@ -2,6 +2,8 @@ var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
     webserver = require('gulp-webserver');
 
+var sass = require('gulp-sass');
+
 var src = './process',
     app = './builds/app';
 
@@ -22,12 +24,14 @@ gulp.task('html', function() {
 });
 
 gulp.task('css', function() {
-  gulp.src( app + '/css/*.css');
+  return gulp.src(src + '/scss/**/*.scss')
+      .pipe(sass().on('error', sass.logError))
+      .pipe(gulp.dest(app + '/css/'));
 });
 
 gulp.task('watch', function() {
   gulp.watch( src + '/js/**/*.js', ['js']);
-  gulp.watch( app + '/css/**/*.css', ['css']);
+  gulp.watch( src + '/scss/**/*.scss', ['css']);
   gulp.watch([ app + '/**/*.html'], ['html']);
 });
 
