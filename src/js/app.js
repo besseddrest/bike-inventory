@@ -1,6 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+var Bicycle = require('./Bicycle');
+
 var MainComponent = React.createClass({
   getInitialState: function() {
     return {
@@ -21,11 +23,11 @@ var MainComponent = React.createClass({
     var tempBikes = this.state.myBikes;
     tempBikes = tempBikes.map(function(item, index){
       return(
-        <BicycleComponent key={index} item={item} />
+        <Bicycle key={index} item={item} />
       )
     });
     return(
-      <div class="bicycle">
+      <div>
         <h2>{this.state.title}</h2>
         <ul>
           {tempBikes}
@@ -35,24 +37,6 @@ var MainComponent = React.createClass({
   } // render
 
 }); // MainComponent
-
-var BicycleComponent = React.createClass({
-  render: function() {
-    return(
-      <li>
-        <h3>{this.props.item.name}</h3>
-        <span>
-          {this.props.item.year} {this.props.item.model} {this.props.item.make}
-        </span><br />
-        Groupset: {this.props.item.groupset}<br />
-        <strong>Notes:</strong><br />
-        <p>
-          {this.props.item.notes}
-        </p>
-      </li>
-    )
-  }
-}); // BicycleComponent
 
 ReactDOM.render(
   <MainComponent />,
