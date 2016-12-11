@@ -1,8 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var _ = require('lodash');
-
-var Bicycle = require('./Bicycle');
+var React = require('react'),
+    ReactDOM = require('react-dom'),
+    _ = require('lodash'),
+    $ = require('jQuery'),
+    Bicycle = require('./Bicycle')
 
 var MainComponent = React.createClass({
   getInitialState: function() {
