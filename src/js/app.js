@@ -35,6 +35,7 @@ var MainComponent = React.createClass({
         <Bicycle key={index} item={item} onDelete={this.removeBike} />
       )
     }.bind(this));
+
     return(
       <div>
         <h2>{this.state.title}</h2>

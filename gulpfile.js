@@ -1,11 +1,10 @@
 var gulp = require('gulp'),
     browserify = require('gulp-browserify'),
-    webserver = require('gulp-webserver');
-
-var sass = require('gulp-sass');
+    webserver = require('gulp-webserver'),
+    sass = require('gulp-sass');
 
 var src = './src',
-    app = './builds/app';
+    app = './build/app';
 
 gulp.task('js', function() {
   return gulp.src( src + '/js/app.js' )
@@ -20,7 +19,7 @@ gulp.task('js', function() {
 });
 
 gulp.task('html', function() {
-  gulp.src( app + '/**/*.html');
+  gulp.src(app + '/**/*.html');
 });
 
 gulp.task('css', function() {
@@ -30,13 +29,13 @@ gulp.task('css', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch( src + '/js/**/*.js', ['js']);
-  gulp.watch( src + '/scss/**/*.scss', ['css']);
-  gulp.watch([ app + '/**/*.html'], ['html']);
+  gulp.watch(src + '/js/**/*.js', ['js']);
+  gulp.watch(src + '/scss/**/*.scss', ['css']);
+  gulp.watch([app + '/**/*.html'], ['html']);
 });
 
 gulp.task('webserver', function() {
-  gulp.src( app + '/')
+  gulp.src(app + '/')
     .pipe(webserver({
         livereload: true,
         open: true

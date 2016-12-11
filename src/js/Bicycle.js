@@ -9,7 +9,6 @@ var Bicycle = React.createClass({
   render: function() {
     return(
       <li className="bicycle">
-        <a className="glyphicon glyphicon-remove" onClick={this.handleDelete}></a>
         <h3 className="bicycle--name">{this.props.item.name}</h3>
         <div className="bicycle--details">
           {this.props.item.year} {this.props.item.model} {this.props.item.make}&nbsp;|&nbsp;
@@ -19,6 +18,7 @@ var Bicycle = React.createClass({
           <strong>Notes:</strong><br />
           {this.props.item.notes}
         </p>
+        <a href="javascript:void(0);" className="bicycle--edit__delete" onClick={this.handleDelete}>Delete</a>
       </li>
     )
   }

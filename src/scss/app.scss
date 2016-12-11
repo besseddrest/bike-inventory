@@ -1,0 +1,43 @@
+/* Custom CSS */
+@import "bootstrap";
+
+$color-light: grey;
+
+$font-small: 12px;
+
+.bicycle {
+  padding: 30px 0;
+  list-style: none;
+  border-bottom: 1px solid $color-light;
+
+  &--name {
+
+  }
+
+  &--info {
+
+  }
+
+  &--details {
+    margin-bottom: 15px;
+
+    &__small {
+      font-size: $font-small;
+      color: $color-light;
+    }
+  }
+
+  &--notes {
+
+  }
+
+  &--edit__delete {
+    cursor: pointer;
+    font-size: $font-small;
+
+    &:hover {
+      color: $brand-danger;
+      text-decoration: underline;
+    }
+  }
+}
